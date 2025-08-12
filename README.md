@@ -1,10 +1,10 @@
-## Collect SSH Keys
+## Collect-SSH-Keys.sh
 
-This script collects and analyzes SSH configuration files and keys across user homes and system locations, providing a JSON-formatted output for integration with security tools like OSSEC/Wazuh.
+This script collects and analyzes SSH configuration files and keys across user homes and system locations, providing a JSON-formatted output for integration with your SIEM.
 
 ### Overview
 
-The `Collect-SSH-Keys` script scans for SSH-related files, including authorized keys and configuration files, analyzing them for potential security issues. It outputs results in a standardized JSON format suitable for active response workflows.
+The `Collect-SSH-Keys.sh` script scans for SSH-related files, including authorized keys and configuration files, analyzing them for potential security issues. It outputs results in a standardized JSON format suitable for active response workflows.
 
 ### Script Details
 
@@ -21,7 +21,7 @@ The `Collect-SSH-Keys` script scans for SSH-related files, including authorized 
 
 #### Command Line Execution
 ```bash
-./Collect-SSH-Keys
+./Collect-SSH-Keys.sh
 ```
 
 #### Parameters
@@ -29,7 +29,7 @@ The `Collect-SSH-Keys` script scans for SSH-related files, including authorized 
 | Parameter | Type | Default Value | Description |
 |-----------|------|---------------|-------------|
 | `ARLog` | string | `/var/ossec/active-response/active-responses.log` | Path for active response JSON output |
-| `LogPath` | string | `/tmp/Collect-SSH-Keys-script.log` | Path for detailed execution logs |
+| `LogPath` | string | `/tmp/Collect-SSH-Keys.sh-script.log` | Path for detailed execution logs |
 | `LogMaxKB` | int | 100 | Maximum log file size in KB before rotation |
 | `LogKeep` | int | 5 | Number of rotated log files to retain |
 
@@ -61,7 +61,7 @@ The `Collect-SSH-Keys` script scans for SSH-related files, including authorized 
 {
   "timestamp": "2025-07-18T10:30:45.123Z",
   "host": "HOSTNAME",
-  "action": "Collect-SSH-Keys",
+  "action": "Collect-SSH-Keys.sh",
   "data": [
     {
       "file": "/home/user/.ssh/authorized_keys",
@@ -101,7 +101,7 @@ The `Collect-SSH-Keys` script scans for SSH-related files, including authorized 
 #### Debugging
 Enable verbose logging:
 ```bash
-VERBOSE=1 ./Collect-SSH-Keys
+VERBOSE=1 ./Collect-SSH-Keys.sh
 ```
 
 ### Contributing
